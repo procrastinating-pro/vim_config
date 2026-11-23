@@ -6,28 +6,24 @@ Interaktywny skrypt w czystym Bashu do szybkiego generowania i zarządzania plik
 
 * `bash` (wersja 4.0+)
 * `vim`
-* `curl` oraz `git` (wymagane wyłącznie przy instalacji wtyczek przez `vim-plug`)
+* `curl` (wymagany do uruchomienia instalatora oraz pobierania `vim-plug`)
+* `git` (wymagany przy instalacji wtyczek przez `vim-plug`)
 
 > **Wskazówka (Ubuntu / Debian):** Domyślny pakiet `vim` często nie jest skompilowany ze wsparciem schowka systemowego (`-clipboard`). Aby kopiowanie między Vimem a systemem działało bez problemu, zainstaluj pełną wersję:
+>
 > ```bash
 > sudo apt update && sudo apt install -y vim-gtk3 curl git
 > ```
 
----
-
 ## Instalacja i uruchomienie
 
-1. Pobierz skrypt lub sklonuj repozytorium:
-   ```bash
-   git clone https://github.com/twoj-uzytkownik/twoje-repo.git
-   cd twoje-repo
-   ```
+Uruchom konfigurator bezpośrednio z terminala (zastąp link adresem raw swojego skryptu):
 
-2. Nadaj uprawnienia do wykonywania i uruchom konfigurator:
-   ```bash
-   chmod +x vim_config.sh
-   ./vim_config.sh
-   ```
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/twoj-uzytkownik/twoje-repo/main/vim_config.sh)
+```
+
+*(Użycie podstawienia procesu `bash <(...)` zamiast potoku `| bash` zachowuje interaktywne wejście z terminala, dzięki czemu menu działa poprawnie.)*
 
 ### Obsługa konfiguratora
 
@@ -38,8 +34,6 @@ Interaktywny skrypt w czystym Bashu do szybkiego generowania i zarządzania plik
 * **`h`** – otwarcie wbudowanej dokumentacji i ściągawki (również przez `./vim_config.sh --help`).
 * **`s`** – zapis konfiguracji (jeśli `~/.vimrc` już istnieje, skrypt utworzy backup `~/.vimrc.bak.RRRRMMDD_GGMMSS`).
 * **`q`** – wyjście bez zapisywania zmian.
-
----
 
 ## Podstawowa obsługa Vima
 
@@ -73,8 +67,6 @@ Vim działa w oparciu o tryby. Najważniejsze to **Normal** (nawigacja i komendy
 | `p` | Wklej poniżej / za kursorem |
 | `/tekst` | Wyszukaj `tekst` w dół (`n` – następny, `N` – poprzedni) |
 | `\ + Enter` | Wyczyść podświetlenie wyszukiwania *(z tego konfiguratora)* |
-
----
 
 ## Zarządzanie wtyczkami (`vim-plug`)
 
