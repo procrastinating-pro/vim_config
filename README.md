@@ -21,7 +21,7 @@ Interaktywny skrypt w czystym Bashu do szybkiego generowania i zarządzania plik
 Uruchom konfigurator bezpośrednio z terminala (zastąp link adresem raw swojego skryptu):
 
 ```bash
-bash <(curl -fsSL [https://raw.githubusercontent.com/twoj-uzytkownik/twoje-repo/main/vim_config.sh](https://raw.githubusercontent.com/procrastinating-pro/vim_config/refs/heads/main/vim_config.sh))
+bash <(curl -fsSL https://raw.githubusercontent.com/twoj-uzytkownik/twoje-repo/main/vim_config.sh)
 ```
 
 *(Użycie podstawienia procesu `bash <(...)` zamiast potoku `| bash` zachowuje interaktywne wejście z terminala, dzięki czemu menu działa poprawnie.)*
